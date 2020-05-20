@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header class="sm-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> 
         <a class="navbar-brand" href="/">Tokyo2020</a>
          
