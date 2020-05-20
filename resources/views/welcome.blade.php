@@ -7,7 +7,7 @@
     <div class="text-center" "md-4">
         <p><h1>🏀バスケットボール</h1></p>
     </div>
-    <div class="main_visual">
+    <div class="main_visual" "md-4">
         <img src="//www.asahicom.jp/olympics/2020/images/game/basketball.jpg" alt="試合中の写真">
     </div>
     
