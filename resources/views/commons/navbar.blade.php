@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">会員登録</a></li>
+                {!! link_to_route('signup.get', '会員登録', [], ['class' => 'btn btn-outline-light btn-sm']) !!}
                 <li class="nav-item"><a href="#" class="nav-link">ログイン</a></li>
             </ul>
         </div>
