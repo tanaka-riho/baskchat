@@ -37,13 +37,11 @@
                 <div class='p'>試合結果</div>
                 </div>
             </div>
-            
+        
         <div class="row">　
             //ここに投票機能表示
             <div class="col-sm-4">
-                @if (count($posts) > 0)
                     @include('posts.posts', ['posts' => $posts])
-                @endif
             </div>
         </div>
             

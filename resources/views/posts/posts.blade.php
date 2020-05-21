@@ -9,7 +9,14 @@
                 <div>
                     <p class="mb-0">{!! nl2br(e($post->content)) !!}</p>
                 </div>
-                
+                <div class="btn-group" role="group" aria-label="基本のボタングループ">
+                    @include('like.like_button', ['user' => $user])
+                    @if (Auth::id() == $post->user_id)
+                        {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-outline-danger btn-sm']) !!}
+                        {!! Form::close() !!}
+                    @endif
+                </div>
             </div>
         </li>
     @endforeach

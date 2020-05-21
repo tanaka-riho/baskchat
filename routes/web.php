@@ -26,3 +26,16 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 });
+
+
+ Route::group(['prefix' => 'users/{id}'], function () {
+    Route::get('likes', 'UsersController@likes')->name('users.likes');    // 追加
+});
+
+ Route::group(['prefix' => 'posts/{id}'], function () {
+        Route::post('like', 'LikesController@store')->name('likes.like');
+        Route::delete('unlike', 'LikesController@destroy')->name('likes.unlike');
+ });
+ 
+Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+;

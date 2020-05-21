@@ -9,14 +9,19 @@ class PostsController extends Controller
 {
     public function index()
     {
-     
-        $posts = Post::all(); // 全件取得
-        $posts = Post::paginate(10); // ページ区切りで取得
+        $data = [];
+            $user = \Auth::user();
+            $posts = Post::all(); // 全件取得
+            $posts = Post::paginate(10); // ページ区切りで取得
+        
+            $data = [
+                'user' => $user,
+                'posts' => $posts,
+            
+            ];
         
         
-        return view('welcome',[
-            'posts'=>$posts
-            ]);
+        return view('welcome', $data);
     }
     
     public function store(Request $request)
