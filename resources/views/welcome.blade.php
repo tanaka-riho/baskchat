@@ -40,7 +40,7 @@
         
         <div class="row">　
             //ここに投票機能表示
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                     @include('posts.posts', ['posts' => $posts])
             </div>
         </div>

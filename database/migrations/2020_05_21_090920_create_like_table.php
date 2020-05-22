@@ -21,9 +21,9 @@ class CreateLikeTable extends Migration
             
             // 外部キー設定
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('post_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 
-            // user_idとfollow_idの組み合わせの重複を許さない
+            // user_idとpost_idの組み合わせの重複を許さない
             $table->unique(['user_id', 'post_id']);
         });
     }
