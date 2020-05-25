@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGamesTable extends Migration
+class RenameVoteToVotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,7 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('country_id');
-            $table->string('result');
-            $table->timestamps();
-        });
+        Schema::rename('vote', 'votes');
     }
 
     /**
@@ -28,6 +23,8 @@ class CreateGamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::table('votes', function (Blueprint $table) {
+            //
+        });
     }
 }

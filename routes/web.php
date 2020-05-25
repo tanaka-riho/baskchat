@@ -40,5 +40,8 @@ Route::group(['middleware' => ['auth']], function () {
 Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 ;
 
+//予想投票画面
+Route::resource('votes','VotesController',['only' => ['index']]);
+
 //試合日程に飛ばす
 Route::resource('games', 'GamesController', ['only' => ['index']]);

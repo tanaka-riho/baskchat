@@ -73,4 +73,44 @@ class User extends Authenticatable
     {
         return $this->likes()->where('post_id', $postId)->exists();
     }
+    
+    public function votes()
+    {
+        return $this->belongsToMany(Game::class, 'vote','user_id','game_id','country_id')->withTimestamps();
+    }
+
+    public function vote($gameId)
+    {
+        //既にお気に入りしているか確認
+        $exist=$this->is_vote($gameId);
+        
+        if ($exist) {
+        //既にお気に入りしていればなにもしない
+        return false;
+        }else{
+        //未お気に入りであればする
+        $this->votes()->attach($gameId);
+        return true;
+        }
+    }
+    
+    public function unvote($gameId)
+    {
+        //既にお気に入りしているか確認
+        $exist=$this->is_vote($gameId);
+       
+        if($exist){
+        //既にお気に入りしていれば外す
+        $this->votes()->detach($gameId);
+        return true;
+        }else{
+        //未お気に入りであればなにもしない
+        return false;
+        }
+    }
+    
+    public function is_vote($gameId)
+    {
+        return $this->votes()->where('game_id', $gameId)->exists();
+    }
 }

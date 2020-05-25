@@ -15,8 +15,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li class="dropdown-item">{!! link_to_route('users.show', 'マイページ', ['id' => Auth::id()]) !!}</li>
-                            <li class="dropdown-item"><a href="#">Player</a></li>
-                            <li class="dropdown-item"><a href="#">試合日程</a></li>
+                            <li class="dropdown-item"><a href="#">注目Player</a></li>
+                            <li class="dropdown-item"><a href="{{ action('GamesController@index') }}">試合日程</a></li>
                             <li class="dropdown-item"><a href="#">試合結果</a></li>
                             <li class="dropdown-item"><a href="#">予想投票</a></li>
                             <li class="dropdown-divider"></li>
