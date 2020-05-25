@@ -12,7 +12,7 @@ class PostsController extends Controller
         $data = [];
             $user = \Auth::user();
             $posts = Post::all(); // 全件取得
-            $posts = Post::paginate(10); // ページ区切りで取得
+            $posts = Post::paginate(5); // ページ区切りで取得
         
             $data = [
                 'user' => $user,
