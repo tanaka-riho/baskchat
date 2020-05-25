@@ -23,7 +23,7 @@
             
             <div class="col-sm-4">
                 <div class="calendar">
-                <a href="#">
+                <a href="{{ action('GamesController@index') }}">
                     <img src="images/calendar.png"></a>
                     <div class='p'>試合日程</div>
                 </div>
