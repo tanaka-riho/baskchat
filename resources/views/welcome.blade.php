@@ -43,10 +43,11 @@
             <div class="col-sm-4">
             </div>    
             
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 @include('posts.posts', ['posts' => $posts])
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
+            @if(Auth::check())
             @if (Auth::id() == $user->id)
                 {!! Form::open(['route' => 'posts.store']) !!}
                     <div class="form-group">
@@ -54,6 +55,7 @@
                         {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                     </div>
                 {!! Form::close() !!}
+            @endif
             @endif
             </div>
         </div>
