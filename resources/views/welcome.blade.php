@@ -40,11 +40,21 @@
             </div>
         
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
             </div>    
             
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 @include('posts.posts', ['posts' => $posts])
+            </div>
+            <div class="col-sm-4">
+            @if (Auth::id() == $user->id)
+                {!! Form::open(['route' => 'posts.store']) !!}
+                    <div class="form-group">
+                        {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
+                        {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+                    </div>
+                {!! Form::close() !!}
+            @endif
             </div>
         </div>
             
