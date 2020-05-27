@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RenameVoteToVotesTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class RenameVoteToVotesTable extends Migration
      */
     public function up()
     {
-        Schema::rename('vote', 'votes');
+        Schema::create('countries', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('country');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,8 +27,6 @@ class RenameVoteToVotesTable extends Migration
      */
     public function down()
     {
-        Schema::table('votes', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('countries');
     }
 }

@@ -1,14 +1,27 @@
-.main_visual img{
-  display: inline-block;
-  margin-top: 25px;
-  width: 100%;
-  height: auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.riho {
+  margin-top:20px;
+  font-size:30px;
 }
 
-.player img{
+@media (min-width: 500px) {
+  .riho{
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 750px) {
+  .riho{
+    font-size: 32px;
+  }
+}
+
+@media (min-width:1000px) {
+  .riho{
+    font-size: 40px;
+  }
+}
+
+.japan img{
   display: inline-block;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -47,27 +60,4 @@
   width: auto;
   height: auto;
   
-}
-
-.riho {
-  margin-top:20px;
-  font-size:30px;
-}
-
-@media (min-width: 500px) {
-  .riho{
-    font-size: 25px;
-  }
-}
-
-@media (min-width: 750px) {
-  .riho{
-    font-size: 32px;
-  }
-}
-
-@media (min-width:1000px) {
-  .riho{
-    font-size: 40px;
-  }
 }

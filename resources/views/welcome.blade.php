@@ -3,11 +3,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-    <div class="text-center" "sm-4">
-        <p><h1>🏀バスケットボール</h1></p>
-    </div>
-    <div class="main_visual" "sm-4">
+     
+    <h1 class="riho" style="text-align:center">🏀バスケットボール</h1>
+        
+    
+     <div class="container">      
+    <div class="main_visual" "col-sm-4">
         <img src="{{ Storage::disk('s3')->url('basketball.jpg') }}" alt="試合中の写真">
         
     </div>
@@ -15,7 +16,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="player">
-                <a href="#">
+                <a href="{{ action('CountriesController@index') }}">
                     <img src="{{ Storage::disk('s3')->url('Stephen-c.png') }}"
                     </a>
                 <div class='p'>注目Player</div>
